@@ -1,8 +1,0 @@
----
-- name: test inc2
-  debug: "var={{ hostvars[item]['hostvar1'] }}"
-  with_items: "{{ groups['group4'] + groups['group5'] + groups['group6'] }}"
-
-- name: test inc2
-  debug: "var={{ hostvars[item]['hostvar1'] }}"
-  with_items: "{{ groups['group4'] + groups['group5'] + groups['group6'] }}"
