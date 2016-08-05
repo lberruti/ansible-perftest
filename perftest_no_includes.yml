@@ -1,0 +1,7 @@
+---
+- name: perftest
+  hosts: all
+  gather_facts: false
+  connection: local
+  roles:
+    - perftest_no_includes

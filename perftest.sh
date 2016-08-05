@@ -17,8 +17,13 @@ set -u
 for v in upstream/stable-1.9 v2.1.1.0-0.5.rc5 upstream/devel; do
   go_to $v > /dev/null
   cat <<EOF
-********************************************************************************
+******************** $v
 EOF
   $ANSIBLE_HOME/bin/ansible-playbook --version
-  play_run perftest.yml $*
+  for play in perftest perftest_no_includes; do
+    cat <<EOF
+*** $play
+EOF
+    play_run $play.yml $*
+  done
 done
